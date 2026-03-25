@@ -1,0 +1,6 @@
+{
+  "name": "x-takip-lisans",
+  "version": "1.0.0",
+  "description": "X Takip Yöneticisi lisans doğrulama API",
+  "private": true
+}
