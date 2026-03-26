@@ -1,27 +1,24 @@
 /**
  * Vercel Serverless Function — /api/verify
  * Lisans kodunu doğrular.
- *
- * POST /api/verify
- * Body: { "license": "XXXX-XXXX-XXXX-XXXX" }
- * Yanıt: { "valid": true/false, "message": "..." }
  */
 
-// ── Lisans Kodları ────────────────────────────────────────────────────────
-// Buraya arkadaşlarının kodlarını ekle/çıkar.
-// Format: "KOD": { "name": "Kişi adı", "active": true/false }
 const LICENSES = {
-  "XTYM-A1B2-C3D4-E5F6": { name: "DevHSN2",   active: true  },
-  "XTYM-B2C3-D4E5-F6G7": { name: "ruhungidasiai",  active: true  }
+  "XTYM-A1B2-C3D4-E5F6": { name: "Ahmet",  active: true },
+  "XTYM-B2C3-D4E5-F6G7": { name: "Mehmet", active: true },
+  "XTYM-C3D4-E5F6-G7H8": { name: "Ayşe",   active: true },
+  // Yeni kod eklemek için bu satırı kopyala:
+  // "XTYM-XXXX-XXXX-XXXX": { name: "Ad Soyad", active: true },
 };
 
 export default function handler(req, res) {
-  // CORS ayarları — extension'dan gelen isteklere izin ver
+  // CORS — tüm originlere izin ver
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  res.setHeader('Access-Control-Max-Age', '86400');
 
-  // OPTIONS preflight
+  // Preflight isteği
   if (req.method === 'OPTIONS') {
     return res.status(200).end();
   }
