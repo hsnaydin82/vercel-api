@@ -11,11 +11,8 @@
 // Buraya arkadaşlarının kodlarını ekle/çıkar.
 // Format: "KOD": { "name": "Kişi adı", "active": true/false }
 const LICENSES = {
-  "XTYM-A1B2-C3D4-E5F6": { name: "Ahmet",   active: true  },
-  "XTYM-B2C3-D4E5-F6G7": { name: "Mehmet",  active: true  },
-  "XTYM-C3D4-E5F6-G7H8": { name: "Ayşe",    active: true  },
-  // Yeni kod eklemek için bu satırı kopyala ve düzenle:
-  // "XTYM-XXXX-XXXX-XXXX": { name: "Ad Soyad", active: true },
+  "XTYM-A1B2-C3D4-E5F6": { name: "DevHSN2",   active: true  },
+  "XTYM-B2C3-D4E5-F6G7": { name: "ruhungidasiai",  active: true  }
 };
 
 export default function handler(req, res) {
